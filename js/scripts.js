@@ -75,46 +75,51 @@
 		$(this).blur();
 	});
 
-    /* Contact form AJAX submit */
-    $('#contactForm').on('submit', function(e){
-        e.preventDefault();
-        var $form = $(this);
-        var $btn = $form.find('button[type="submit"]');
-        // remove old messages
-        $form.find('.form-message').remove();
-        var data = {
-            name: $('#cname').val(),
-            email: $('#cemail').val(),
-            message: $('#cmessage').val()
-        };
+    /* Contact form AJAX submit - only enable when running a local dev server (localhost)
+        The site also uses a FormSubmit AJAX POST in the inline script for production hosting.
+        This prevents double form submission messages when the site is served from non-localhost.
+    */
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        $('#contactForm').on('submit', function(e){
+            e.preventDefault();
+            var $form = $(this);
+            var $btn = $form.find('button[type="submit"]');
+            // remove old messages
+            $form.find('.form-message').remove();
+            var data = {
+                name: $('#cname').val(),
+                email: $('#cemail').val(),
+                message: $('#cmessage').val()
+            };
 
-        $btn.prop('disabled', true).text('Sending...');
+            $btn.prop('disabled', true).text('Sending...');
 
-        $.ajax({
-            url: 'http://localhost:3000/api/contact',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(data),
-            success: function(res){
-                console.log('Contact form success response:', res);
-                var msg = $('<p class="form-message text-success mt-3">Message sent. Thank you!</p>');
-                $form.append(msg);
-                $form[0].reset();
-                $('input,textarea').removeClass('notEmpty');
-                msg.delay(5000).fadeOut(function(){ $(this).remove(); });
-            },
-            error: function(xhr){
-                console.error('Contact form error response:', xhr && xhr.responseJSON ? xhr.responseJSON : xhr);
-                var text = 'Error sending message. Please try again later.';
-                if (xhr && xhr.responseJSON && xhr.responseJSON.error) text = xhr.responseJSON.error;
-                var msg = $('<p class="form-message text-danger mt-3"></p>').text(text);
-                $form.append(msg);
-                msg.delay(7000).fadeOut(function(){ $(this).remove(); });
-            },
-            complete: function(){
-                $btn.prop('disabled', false).text('Submit');
-            }
+            $.ajax({
+                url: 'http://localhost:3000/api/contact',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(res){
+                    console.log('Contact form success response:', res);
+                    var msg = $('<p class="form-message text-success mt-3">Message sent. Thank you!</p>');
+                    $form.append(msg);
+                    $form[0].reset();
+                    $('input,textarea').removeClass('notEmpty');
+                    msg.delay(5000).fadeOut(function(){ $(this).remove(); });
+                },
+                error: function(xhr){
+                    console.error('Contact form error response:', xhr && xhr.responseJSON ? xhr.responseJSON : xhr);
+                    var text = 'Error sending message. Please try again later.';
+                    if (xhr && xhr.responseJSON && xhr.responseJSON.error) text = xhr.responseJSON.error;
+                    var msg = $('<p class="form-message text-danger mt-3"></p>').text(text);
+                    $form.append(msg);
+                    msg.delay(7000).fadeOut(function(){ $(this).remove(); });
+                },
+                complete: function(){
+                    $btn.prop('disabled', false).text('Submit');
+                }
+            });
         });
-    });
+    }
 
 })(jQuery);

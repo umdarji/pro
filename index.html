@@ -166,40 +166,67 @@
 
     <!-- About-->
     <div id="about" class="basic-1 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container first">
-                        <h2>Hi there I'm Umang Darji</h2>
-                        <p>my objective is to leverage my technical skills, problem-solving abilities, and passion for software development to contribute to the growth and success of an innovative organization.</p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container second">
-                        <div class="time">2023 - 2025</div>
-                        <h6>Master of Computer Applications</h6>
-                        <p>Ganpat University , CGPA :- 7.3</p>
-                        <!-- <p>C.G.P.A :- 7.3 </p> -->
-                        <div class="time">2020 - 2023</div>
-                        <h6>Bachelor of Computer Applications</h6>
-                        <p>Ganpat University ,  CGPA :- 7.3</p>
-                       
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container third">
-                        <div class="time">2019 - 2020</div>
-                        <h6>H.S.C</h6>
-                        <p>Gujarat Secondary and Higher Secondary Education Board</p>
+    <div class="container">
+        <div class="row">
+            <!-- Column 1: About -->
+            <div class="col-lg-4">
+                <div class="text-container first">
+                    <h2>Hi there, I'm Umang Darji</h2>
+                    <p>My objective is to leverage my technical skills, problem-solving abilities, and passion for software development to contribute to the growth and success of an innovative organization.</p>
+                </div>
+            </div>
 
-                        <div class="time">2017 - 2018</div>
-                        <h6>S.S.C</h6>
-                        <p>Gujarat Secondary and Higher Secondary Education Board</p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
+            <!-- Column 2: Education -->
+            <div class="col-lg-4">
+                <div class="text-container second">
+                    <div class="time">2023 - 2025</div>
+                    <h6>Master of Computer Applications</h6>
+                    <p>Ganpat University, CGPA: 7.3</p>
+
+                    <div class="time">2020 - 2023</div>
+                    <h6>Bachelor of Computer Applications</h6>
+                    <p>Ganpat University, CGPA: 7.3</p>
+                </div>
+            </div>
+
+            <!-- Column 3: School -->
+            <div class="col-lg-4">
+                <div class="text-container third">
+                    <div class="time">2019 - 2020</div>
+                    <h6>H.S.C</h6>
+                    <p>Gujarat Secondary and Higher Secondary Education Board</p>
+
+                    <div class="time">2017 - 2018</div>
+                    <h6>S.S.C</h6>
+                    <p>Gujarat Secondary and Higher Secondary Education Board</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ Internship Section -->
+<div id="internship" class="basic-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-container">
+                    <h2>Internship Experience</h2>
+
+                    <div class="time">January 2023 - June 2023</div>
+                    <h6>Web Application Developer Intern - Maxgen Technologies Pvt. Ltd</h6>
+                    <p>Developed full-stack web applications using Django. Worked on user authentication, forms, and admin interface. Gained experience in deployment and version control.
+</p>
+
+                    <div class="time">January 2025 - April 2025</div>
+                    <h6>Web Application Developer Intern - Vijapura Infotech</h6>
+                    <p>Contributed to the development of a web-based School Management Platform, contributing to both frontend and backend components and gaining practical experience in web development and database integration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- end of about -->
 
 
@@ -547,7 +574,7 @@
                 </div> <!-- end of col -->
                 <div class="col-lg-12">
                 <p>Umang P Darji</p>
-                <p>Phone :- +91 9727779630</p>
+                <p>Phone :- +91 9313853077</p>
                 <p>Email :- dumang963@gmail.com</p>
                 </div> <!-- end of row -->
             </div>
@@ -606,35 +633,63 @@
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
     <script>
+        // Use FormSubmit's AJAX endpoint to avoid CORS issues when sending via fetch
         document.getElementById("contactForm").addEventListener("submit", async function(e) {
             e.preventDefault();
 
-            const name = document.getElementById("cname").value;
-            const email = document.getElementById("cemail").value;
-            const message = document.getElementById("cmessage").value;
             const status = document.getElementById("status");
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            status.textContent = "Sending...";
 
-            const formData = new FormData();
-            formData.append("name", name);
-            formData.append("email", email);
-            formData.append("message", message);
-            formData.append("_next", "https://yourwebsite.com/thank-you.html");  // Optional redirect
-            formData.append("_captcha", "false"); // Disable captcha
+            // Build FormData from the form element directly
+            const formData = new FormData(this);
+            // Optional helper fields supported by FormSubmit
+            formData.append("_next", "https://yourwebsite.com/thank-you.html");
+            formData.append("_captcha", "false");
 
             try {
-            const response = await fetch("https://formsubmit.co/dumang963@gmail.com", {
-                method: "POST",
-                body: formData
-            });
+                const response = await fetch("https://formsubmit.co/ajax/dumang963@gmail.com", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        // Ask for JSON back (FormSubmit's /ajax route returns JSON and allows CORS)
+                        'Accept': 'application/json'
+                    }
+                });
 
-            if (response.ok) {
-                status.textContent = "✅ Message sent successfully!";
-                this.reset();
-            } else {
-                status.textContent = "❌ Failed to send message. Try again later.";
-            }
+                // Try to parse JSON response (FormSubmit /ajax returns JSON)
+                let data = null;
+                try { data = await response.json(); } catch (e) { /* ignore parse errors */ }
+
+                // Log response for debugging (helps explain cases where email was delivered but fetch reports non-ok)
+                console.debug('Contact form response', { status: response.status, ok: response.ok, data });
+
+                // Consider the send successful if any of the following are true:
+                // - response.ok is true (standard)
+                // - response.status is in the 2xx-3xx range (some providers redirect)
+                // - FormSubmit returns an explicit success flag or a message containing 'success'
+                const dataMessage = data && data.message ? data.message : '';
+                const successByData = data && (data.success === true || /success/i.test(dataMessage));
+                const successByStatus = response.status >= 200 && response.status < 400;
+
+                if (response.ok || successByStatus || successByData) {
+                    // Prefer the provider message if present
+                    const successMsg = dataMessage || 'Message sent successfully!';
+                    status.textContent = `✅ ${successMsg}`;
+                    this.reset();
+                } else {
+                    // If FormSubmit returns an error message, show it; otherwise show a generic message
+                    const msg = dataMessage || 'Failed to send message. Try again later.';
+                    status.textContent = `❌ ${msg}`;
+                }
             } catch (error) {
-            status.textContent = "⚠️ Something went wrong. Please try again.";
+                // Network or CORS failures will land here
+                status.textContent = "⚠️ Something went wrong. Please check your connection and try again.";
+                // Also log to console for debugging
+                console.error('Contact form submit error:', error);
+            } finally {
+                submitBtn.disabled = false;
             }
         });
     </script>
