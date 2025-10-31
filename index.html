@@ -363,15 +363,22 @@
     </div> <!-- end of split -->
     <!-- end of details -->
 
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+
 
     <!-- Projects -->
     <div id="project" class="basic-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="h2-heading">Featured Projects</h2>
+                    <h2 class="h2-heading" align="center">Featured Projects</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
+            <br>
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="card h-100" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'">
@@ -446,15 +453,7 @@
     </div> <!-- end of basic-3 -->
     <!-- end of projects -->
 
-    <!-- Section Divider -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <hr class="section-divider">
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-    <!-- end of section divider -->
+   
 
 
     <!-- Questions -->
@@ -546,7 +545,12 @@
                     <h2>Contact details</h2>
                     <p class="p-heading">For any type of online project please don't hesitate to get in touch with me. The fastest way is to send me your message using the following email <a class="blue no-line">dumang963@gmail.com</a></p>
                 </div> <!-- end of col -->
-            </div> <!-- end of row -->
+                <div class="col-lg-12">
+                <p>Umang P Darji</p>
+                <p>Phone :- +91 9727779630</p>
+                <p>Email :- dumang963@gmail.com</p>
+                </div> <!-- end of row -->
+            </div>
             
             
 
@@ -556,20 +560,21 @@
                     <!-- Contact Form -->
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
+                            <input type="text" class="form-control-input" id="cname" name="name" required>
                             <label class="label-control" for="cname">Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
+                            <input type="email" class="form-control-input" id="cemail" name="email" required>
                             <label class="label-control" for="cemail">Email</label>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <textarea class="form-control-textarea" id="cmessage" name="message" required></textarea>
                             <label class="label-control" for="cmessage">Project details</label>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="form-control-submit-button">Submit</button>
                         </div>
+                        <p id="status" style="margin-top:10px;"></p>
                     </form>
                     <!-- end of contact form -->
 
@@ -600,5 +605,38 @@
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("cname").value;
+            const email = document.getElementById("cemail").value;
+            const message = document.getElementById("cmessage").value;
+            const status = document.getElementById("status");
+
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("email", email);
+            formData.append("message", message);
+            formData.append("_next", "https://yourwebsite.com/thank-you.html");  // Optional redirect
+            formData.append("_captcha", "false"); // Disable captcha
+
+            try {
+            const response = await fetch("https://formsubmit.co/dumang963@gmail.com", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                status.textContent = "✅ Message sent successfully!";
+                this.reset();
+            } else {
+                status.textContent = "❌ Failed to send message. Try again later.";
+            }
+            } catch (error) {
+            status.textContent = "⚠️ Something went wrong. Please try again.";
+            }
+        });
+    </script>
 </body>
 </html>
