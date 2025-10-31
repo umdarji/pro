@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Bus Management System</title>
+    
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/U.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            
+            <!-- Image Logo -->
+            <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/U.png" alt="alternative"></a>   -->
+            <a class="navbar-brand logo-text page-scroll" href="index.html">
+                <span class="logo-initials">UD</span>
+                <span class="sr-only">Umang Darji</span>
+            </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#header">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item page-scroll" href="project.html">Project Details</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+            </div> end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1  align="center" >Bus Management System</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Short Description -->
+    <div class="ex-basic-1 pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="text-box text-center">
+                        <h3 class="mb-3">Smart Bus Management Solution</h3>
+                        <p class="lead">
+                            An intelligent transportation management system that streamlines bus operations, enhances passenger experience, and optimizes fleet management. Our solution offers real-time tracking, easy booking, and comprehensive administrative controls.
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="feature-item">
+                                    <i class="fas fa-ticket-alt mb-2" style="font-size: 24px; color: #5f4dee;"></i>
+                                    <h5>Easy Booking</h5>
+                                    <p>Simple ticket booking and e-ticketing system</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-item">
+                                    <i class="fas fa-map-marker-alt mb-2" style="font-size: 24px; color: #5f4dee;"></i>
+                                    <h5>Live Tracking</h5>
+                                    <p>Real-time bus location and route updates</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-item">
+                                    <i class="fas fa-chart-line mb-2" style="font-size: 24px; color: #5f4dee;"></i>
+                                    <h5>Smart Analytics</h5>
+                                    <p>Comprehensive reporting and insights</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-fluid mt-5 mb-3" src="images/image.png" alt="alternative">
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <p>Welcome to our state-of-the-art Bus Management System (BMS), a comprehensive digital solution revolutionizing public transportation management. This advanced system integrates cutting-edge technology with practical transportation needs to create a seamless experience for both operators and passengers. Our BMS addresses the complex challenges of modern urban mobility while ensuring efficiency, safety, and passenger satisfaction.</p>
+                    <p class="mb-5">Designed with scalability in mind, our system caters to transportation networks of all sizes - from small local operators to large metropolitan transit authorities. It combines real-time GPS tracking, smart scheduling algorithms, automated booking systems, and comprehensive fleet management tools in one integrated platform. The system's modular architecture allows for easy customization to meet specific operational requirements while maintaining robust performance and reliability.</p>
+
+                    <h2 class="mb-3">Key Features and Benefits</h2>
+                    <h4>For Transport Operators:</h4>
+                    <ul class="mb-3">
+                        <li>Real-time fleet monitoring with advanced GPS tracking</li>
+                        <li>Automated route optimization and scheduling</li>
+                        <li>Comprehensive maintenance tracking and alerts</li>
+                        <li>Driver performance monitoring and management</li>
+                        <li>Revenue and expense tracking with detailed analytics</li>
+                    </ul>
+                    
+                    <h4>For Passengers:</h4>
+                    <ul class="mb-3">
+                        <li>Mobile-friendly booking system with seat selection</li>
+                        <li>Real-time bus tracking and arrival predictions</li>
+                        <li>Digital ticket management and quick cancellations</li>
+                        <li>Multiple payment options and secure transactions</li>
+                        <li>Automated travel alerts and notifications</li>
+                    </ul>
+                    
+                    <h4>Business Benefits:</h4>
+                    <ul class="mb-4">
+                        <li>Reduced operational costs through efficient resource allocation</li>
+                        <li>Increased revenue through improved booking rates</li>
+                        <li>Enhanced customer satisfaction and loyalty</li>
+                        <li>Data-driven decision making with comprehensive analytics</li>
+                        <li>Streamlined regulatory compliance and reporting</li>
+                    </ul>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+
+    <br>
+
+    <!-- Photo Gallery -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <h2 class="mb-4" align="center">Bus Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/p1/4.png" class="card-img-top" alt="Bus 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Search Bus</h5>
+                            <p class="card-text">Our modern bus fleet ensures comfortable and safe travel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/p1/5.png" class="card-img-top" alt="Bus 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Add detail </h5>
+                            <p class="card-text">simple information for passenger.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/p1/6.png" class="card-img-top" alt="Bus 3">
+                        <div class="card-body">
+                            <h5 class="card-title">E-ticket</h5>
+                            <p class="card-text">Dedicated staff providing excellent service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/p1/1.png" class="card-img-top" alt="Bus 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Admin Deshboard</h5>
+                            <p class="card-text">Our modern bus fleet ensures comfortable and safe travel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/p1/2.png" class="card-img-top" alt="Bus 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Add Bus</h5>
+                            <p class="card-text">Luxurious interior designed for passenger comfort.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/p1/3.png" class="card-img-top" alt="Bus 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Bus Detail</h5>
+                            <p class="card-text">Dedicated staff providing excellent service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- Cards -->
+    <div class="ex-cards-1 pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Card -->
+                    <div class="card">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <span class="fa-stack">
+                                    <span class="fas fa-circle fa-stack-2x"></span>
+                                    <span class="fa-stack-1x">1</span>
+                                </span>
+                                <div class="media-body">
+                                    <h5>Route Management</h5>
+                                    <p>Efficiently manage bus routes, schedules, and stops. Add new routes, modify existing ones, and optimize travel times based on traffic patterns and passenger demand.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <span class="fa-stack">
+                                    <span class="fas fa-circle fa-stack-2x"></span>
+                                    <span class="fa-stack-1x">2</span>
+                                </span>
+                                <div class="media-body">
+                                    <h5>Booking System</h5>
+                                    <p>User-friendly online booking interface with seat selection, multiple payment options, and instant ticket generation. Includes easy cancellation and refund processing.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <span class="fa-stack">
+                                    <span class="fas fa-circle fa-stack-2x"></span>
+                                    <span class="fa-stack-1x">3</span>
+                                </span>
+                                <div class="media-body">
+                                    <h5>Fleet Management</h5>
+                                    <p>Complete vehicle tracking, maintenance scheduling, fuel monitoring, and driver management. Includes real-time GPS tracking and performance analytics.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->   
+            </div> <!-- end of row -->   
+        </div> <!-- end of container -->   
+    </div> <!-- end of ex-cards-1 -->
+    <!-- end of cards -->
+
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <p class="mb-5">Our Bus Management System provides a comprehensive solution for transport companies of all sizes. The system includes advanced features for both administrators and passengers, ensuring smooth operations and satisfactory travel experiences.</p>
+                    
+                    <h2 class="mb-4">System Access and User Roles</h2>
+                    <img class="img-fluid mb-5" src="images/project-details-small.jpg" alt="system dashboard">
+                    <p>The system supports multiple user roles with different access levels and capabilities:</p>
+                    <p class="mb-5">1. Administrators: Full access to all system features, including route management, staff scheduling, and financial reporting.<br>
+                    2. Staff: Access to daily operations like ticket booking, passenger management, and bus scheduling.<br>
+                    3. Drivers: Access to route details, passenger lists, and vehicle maintenance records.<br>
+                    4. Passengers: Access to booking system, travel history, and personal profile management.</p>
+                    <div class="text-box mb-5">
+                        <h3>Key System Features and Benefits</h3>
+                        <p>Our Bus Management System offers comprehensive features for efficient transport management, including real-time tracking, automated scheduling, and detailed analytics. The system helps reduce operational costs while improving service quality and passenger satisfaction.</p>
+                    </div> <!-- end of text-box -->
+                    <p class="mb-4">The system is designed to handle various aspects of bus transportation management, from daily operations to long-term planning and analytics.</p>
+                    <ul class="list-unstyled li-space-lg mb-5">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><strong>Route Planning</strong> - Create and manage bus routes, stops, and schedules with real-time updates</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><strong>Ticket Management</strong> - Online booking, seat reservation, and digital ticket generation</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><strong>Fleet Management</strong> - Vehicle tracking, maintenance scheduling, and fuel consumption monitoring</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><strong>Staff Management</strong> - Driver scheduling, attendance tracking, and performance monitoring</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><strong>Reporting & Analytics</strong> - Detailed reports on operations, finances, and performance metrics</div>
+                        </li>
+                    </ul>
+
+                    <a class="btn-solid-reg mb-5" href="index.html">Back</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+
+
+    <!-- Footer -->
+     <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © <a class="no-line" href="#your-link">2025 My Portfolio. All rights reserved.</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    
+    	
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
