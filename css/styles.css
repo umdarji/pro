@@ -28,6 +28,20 @@ Table Of Contents:
 .basic-4 .card .card-body {
     padding: 2rem;
 }
+/* Make project card action buttons uniform */
+.basic-4 .card .btn {
+	display: inline-block;
+	width: 120px; /* fixed width for consistency */
+	text-align: center;
+	white-space: nowrap;
+}
+
+/* On small screens make the buttons stack / fill the card width for better touch targets */
+@media (max-width: 575.98px) {
+	.basic-4 .card .btn {
+		width: 100%;
+	}
+}
 /* - Skills Section
 - Projects
 - Works
